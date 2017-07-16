@@ -1,41 +1,69 @@
-<!-- <h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<section class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= image_tag("logo.png") %>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="conteudo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Transforme sua<br/>
+          carreira
+          <span>AGORA!</span>
+        </h2>
+        <p>É a mistura do programa O Aprendiz com o Tropa de Elite. Mas como assim?</p>
+        <br>
+        <p>O Gama Experience é um treinamento que desenvolve talentos para trabalhar em startups através de conceitos, teorias e muita mão-na-massa, proporcionando uma experiência que simula o dia a dia do ambiente de trabalho.</p>
+        <p>
 
- -->
-<!-- Header -->
-<header id="header">
-  <div class="intro">
-    <div class="overlay">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 intro-text">
-            <h1>Saiba como trabalhar em uma Startup!</h1>
-            <p>A oportunidade do emprego dos seus sonhos diante dos seus olhos.</p>
-          </div>
-          <div class="col-md-4 intro-text form">
-            <%= form_with(model: Lead.new, remote: true) do |form| %>
-                <%= form.text_field :name, id: :lead_name, placeholder: "Nome" %>
-                <%= form.text_field :email, id: :lead_email, placeholder: "Email" %>
-                <%= form.submit "Enviar" %>
-            <% end %>
-          </div>
+          <p>Selecionamos 100 talentos que podem ser profissionais júnior, pleno e sênior, através de um processo seletivo que envolve avaliação comportamental e prova técnica. Os selecionados passam por um treinamento intensivo hardcore de 5 semanas, onde
+            desenvolvem suas habilidades técnicas e aprendem sobre ferramentas essenciais de startups.</p>
+          <br>
+          <p>No fim do programa, os sobreviventes participam de uma feira de contratações onde as startups conhecem os talentos, entrevistam e já podem até oferecer propostas de trabalho.</p>
+          <br>
+          <p>De cada 10 alunos formados, 7 são contratados por empresas parceiras.</p>
+          <br>
+          <p>Em resumo, selecionamos, capacitamos e conectamos talentos a startups.</p>
+          <p>O Gama Experience é um treinamento que desenvolve talentos para trabalhar em startups através de conceitos, teorias e muita mão-na-massa, proporcionando uma experiência que simula o dia a dia do ambiente de trabalho.</p>
+        </div>
+        <div class="col-md-5">
+          <div class="formulario">
+            <div class="caixa">
+              <%= form_with(model: Lead.new, remote: true) do |form| %>
+                <label>
+                  Nome:</label>
+                <%= form.text_field :name, id: :lead_name, placeholder: "Nome", class: "form-control" %>
+                <label>
+                  E-mail:</label>
+                <%= form.text_field :email, id: :lead_email, placeholder: "Email", class: "form-control" %>
+            </div>
+              <%= form.submit "QUERO TRABALHAR EM UM STARTUP!" %>
+              <% end %>
+          </form>
         </div>
       </div>
     </div>
   </div>
-</header>
-<!-- Footer Section -->
-<div id="footer">
-  <div class="container text-center">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="social">
-        <ul>
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-        </ul>
+</section>
+
+<section class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Compartilhe e ajude um amigo com sua
+          <font>TRANSFORMAÇÃO</font>
+        </h3>
+        <div class="social">
+          <a target="_blank" href="https://pt-br.facebook.com/gamaacademybr/">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
-      <p>&copy; 2017. Designed by <a href="#" rel="nofollow">Gama Em Mim</a></p>
     </div>
   </div>
+</section>
