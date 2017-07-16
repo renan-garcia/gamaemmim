@@ -3,6 +3,10 @@ var errorMsg = '<%= j @lead.errors.full_messages.join(';') %>';
 var errors = errorMsg.split(';');
 if (errorAmount == 0) {
   toastr.success('Cadastro efetuado com sucesso!');
+  $('#lead_name').val('');
+  $('#lead_email').val('');
 } else {
-  toastr.error('Erro ao efetuar o registro!');
+  for (var i = 0; i < Object.keys(errors).length; i++){
+    toastr.error(errors[i]);
+  }
 }

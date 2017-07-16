@@ -41,6 +41,8 @@ gem 'ipaddress'
 gem 'jquery-rails'
 # Repository for collecting Locale data for Ruby on Rails I18n
 gem 'rails-i18n'
+# the font-awesome font bundled as an asset for the rails asset pipeline
+gem 'font-awesome-rails'
 
 source 'https://rails-assets.org' do
   # The most popular front-end framework for developing responsive, mobile first projects on the web.
