@@ -1,0 +1,8 @@
+var errorAmount = '<%= @lead.errors.size %>';
+var errorMsg = '<%= j @lead.errors.full_messages.join(';') %>';
+var errors = errorMsg.split(';');
+if (errorAmount == 0) {
+  toastr.success('Cadastro efetuado com sucesso!');
+} else {
+  toastr.error('Erro ao efetuar o registro!');
+}

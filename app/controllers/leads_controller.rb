@@ -26,14 +26,9 @@ class LeadsController < ApplicationController
   def create
     @lead = Lead.new(lead_params)
     @lead.ip = request.remote_ip
+    @lead.save
     respond_to do |format|
-      if @lead.save
-        format.html { redirect_to @lead, notice: 'Lead was successfully created.' }
-        format.json { render :show, status: :created, location: @lead }
-      else
-        format.html { render :new }
-        format.json { render json: @lead.errors, status: :unprocessable_entity }
-      end
+      format.js
     end
   end
 
