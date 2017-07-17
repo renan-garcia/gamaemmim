@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins, skip: :registrations
+
   root 'home#index'
 
   resources :leads, except: %i[edit update destroy]

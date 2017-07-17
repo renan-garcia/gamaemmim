@@ -1,5 +1,6 @@
 class LeadsController < ApplicationController
-  before_action :set_lead, only: [:show, :edit, :update, :destroy]
+  before_action :set_lead, only: %i[show edit update destroy]
+  before_action :authenticate_admin!, only: %i[index edit update destroy]
 
   # GET /leads
   # GET /leads.json
@@ -9,8 +10,7 @@ class LeadsController < ApplicationController
 
   # GET /leads/1
   # GET /leads/1.json
-  def show
-  end
+  def show; end
 
   # GET /leads/new
   def new
@@ -18,15 +18,14 @@ class LeadsController < ApplicationController
   end
 
   # GET /leads/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /leads
   # POST /leads.json
   def create
     @lead = Lead.new(lead_params)
     @lead.ip = request.remote_ip
-    @lead.save
+    Lead.exists?(email: @lead.email) ? return : @lead.save
     respond_to do |format|
       format.js
     end
@@ -57,13 +56,14 @@ class LeadsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_lead
-      @lead = Lead.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def lead_params
-      params.require(:lead).permit(:name, :email)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_lead
+    @lead = Lead.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def lead_params
+    params.require(:lead).permit(:name, :email)
+  end
 end

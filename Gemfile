@@ -35,6 +35,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+# Minimal authorization through OO design and pure Ruby classes
+gem "pundit"
+# Flexible authentication solution for Rails with Warden.
+gem 'devise'
+# Translations for the devise gem
+gem 'devise-i18n'
 # A library to handle IP (both IPv4 and IPv6) addresses in a modern and productive way.
 gem 'ipaddress'
 # Use jquery as the JavaScript library
