@@ -26,7 +26,7 @@ ul{
 	margin:0 0;
 }
 body{
-  background-color: #212121;
+  background-color: #1a1a1a;
 	padding:0 0;
 	margin:0 0;
 }
@@ -38,7 +38,7 @@ body{
 
 .conteudo{
   background-color: white;
-  padding: 2em;
+  padding: 3em;
 }
 
 .conteudo h2{
@@ -46,14 +46,16 @@ body{
   font-weight: 900;
   font-size: 4em;
   font-family: 'Roboto', sans-serif;
+  margin-bottom: 1em;
 }
 
 .conteudo h3{
   color: #212121;
   font-weight: 900;
   font-size: 2em;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu Light', sans-serif;
 }
+
 .conteudo p{
   color: #333333;
   font-family: 'Roboto', sans-serif;
@@ -72,7 +74,8 @@ body{
   min-height:100px;
   height: auto;
   margin: 0 auto;
-  padding: 1em;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 .footer h3{
@@ -84,8 +87,6 @@ body{
 .footer font{
   color: #75ee4a;
 }
-
-
 
 .social{
   background-color: #fff;
@@ -105,7 +106,7 @@ line-height: 2em;
 
 
 .formulario{
-  padding: 2em;
+  padding-top: 3em;
 }
 
 .caixa{
@@ -120,7 +121,7 @@ line-height: 2em;
 
 .formulario input[type=submit]{
   background-color: #2196f3;
-  padding: 1em;
+  padding: 1.5em;
   color: #fff;
   width: 100%;
   box-shadow: 0px 5px 2px #1565c0;
@@ -140,4 +141,16 @@ line-height: 2em;
   color: #fff;
    font-weight: 900;
    font-weight: bolder;
+}
+
+.text-one{
+  margin-bottom: 1em;
+}
+
+.text-two{
+  margin-bottom: 1.5em;
+}
+
+.label-two{
+  margin-top: 0.5em;
 }

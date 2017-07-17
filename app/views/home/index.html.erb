@@ -14,11 +14,8 @@
       
       <div class="col-md-6">
         <h2>Você está feliz com seu trabalho?</h2>
-        <br>
-        <p>Está desmotivado e tem dificuldades para encontrar oportunidades?</p>
-        <br>
-        <p>Já pensou em como seria espetacular trabalhar em um ambiente dinâmico e empreendedor?</p><p>
-        <br>
+        <p class="text-one">Está desmotivado e tem dificuldades para encontrar oportunidades?</p>
+        <p class="text-two">Já pensou em como seria espetacular trabalhar em um ambiente dinâmico e empreendedor?</p><p>
         <h3><span>Transformamos</span> e <span>conectamos</span> talentos como você às <span>melhores startups</span> do mercado!</h2>
         
       </div>
@@ -30,7 +27,7 @@
                 <label>
                   Nome:</label>
                 <%= form.text_field :name, id: :lead_name, placeholder: "Nome", class: "form-control" %>
-                <label>
+                <label class="label-two">
                   E-mail:</label>
                 <%= form.text_field :email, id: :lead_email, placeholder: "Email", class: "form-control" %>
             </div>
@@ -47,10 +44,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-      <br>
         <h3>Compartilhe e ajude um amigo com sua
           <font>TRANSFORMAÇÃO</font>
         </h3>
+        <br>
         <br>
         <div class="social">
           <a target="_blank" href="https://pt-br.facebook.com/gamaacademybr/">
