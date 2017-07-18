@@ -1,5 +1,4 @@
 function validate() {
-  debugger;
   var result = true;
   var full_name = $('#lead_name').val().split(' ');
   if(full_name.length <= 1){
