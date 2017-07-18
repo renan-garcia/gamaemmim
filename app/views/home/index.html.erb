@@ -25,7 +25,7 @@
             <div class="caixa">
               <%= form_with(model: Lead.new, remote: true) do |form| %>
                 <div class="form-group" id="name-group">
-                  <label class='control-label' for='lead_name'>Nome:</label>
+                  <label class='control-label' for='lead_name'>Nome completo:</label>
                   <%= form.text_field :name, id: :lead_name, placeholder: "Nome", class: "form-control" %>
                   <div class="alert alert-danger error-lead-name" role="alert" style="display:none; margin-top: 10px;">
                     <%= fa_icon "exclamation-triangle" %>
@@ -53,7 +53,7 @@
   </div>
 </section>
 
-<section class="footer">
+<%#<section class="footer">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -70,4 +70,4 @@
       </div>
     </div>
   </div>
-</section>
+</section>%>
