@@ -21,7 +21,8 @@
           <td><%= lead.email %></td>
           <td><%= lead.ip %></td>
           <td><%= lead.created_at %></td>
-          <td><%= link_to 'Edit', edit_lead_path(lead) %></td> 
+          <td><%= link_to 'Editar', edit_lead_path(lead) %></td>
+          <td><%= link_to 'Remover', lead, method: :delete, data: { confirm: 'TEM CERTEZA!?NÃO TEM VOLTA!' } %></td>
         </tr>
       <% end %>
     </tbody>
