@@ -154,3 +154,26 @@ line-height: 2em;
 .label-two{
   margin-top: 0.5em;
 }
+
+@media screen and (min-width: 300px) and (max-width: 750px) {
+ .conteudo h2{
+    font-size: 2.5em;
+  }
+
+  .conteudo{
+    padding: 0.5em;
+  }
+  .conteudo h3{
+    text-align: left;
+    font-size: 1.7em;
+  }
+
+  .formulario{
+    padding: 0em;
+    margin-bottom: 1em;
+  }
+
+  .caixa{
+    width: 100%;
+  }
+}
