@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Lead.all.each do |lead|
+  full_name = lead.name.split(" ")
+  if(full_name.size <= 1)
+    lead.name = lead.name + " " + Faker::Name.last_name
+    lead.save
+  end
+end
