@@ -1,4 +1,4 @@
-body a{
+/*body a{
     transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
@@ -153,7 +153,216 @@ line-height: 2em;
 
 .label-two{
   margin-top: 0.5em;
+}*/
+
+
+
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+
+
+input[type="submit"]{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
 }
+
+a:link {
+ text-decoration:none;
+}
+
+h1,h2,h3,h4,h5,h6{
+	padding:0 0;
+	margin:0 0;
+}
+p{
+	padding:0 0;
+	margin:0 0;
+}
+ul{
+	padding:0 0;
+	margin:0 0;
+}
+body{
+  background-color: #1a1a1a;
+	padding:0 0;
+	margin:0 0;
+}
+.header{
+	background-color: #212121;
+	min-height:100px;
+  height: auto;
+  color: #fff;
+}
+
+.header a{
+  color: #fff;
+}
+
+.header button {
+  background-color: #2196f3;
+  padding: 1em;
+  color: #fff;
+  width: 100%;
+  box-shadow: 0px 5px 2px #1565c0;
+  border: 0px solid;
+  font-weight: 900;
+  font-weight: bolder;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 4%;
+}
+
+.header button:hover{
+  background: #1565c0;
+}
+
+.conteudo{
+  background-color: white;
+  padding: 2em;
+}
+
+.conteudo h2{
+  color: #212121;
+  font-weight: 900;
+  font-size: 4em;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.conteudo h3{
+  color: #212121;
+  font-weight: 900;
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+}
+.conteudo p{
+  color: #333333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+}
+
+.conteudo span{
+  color: #2196f3;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-weight: bolder;
+}
+
+.footer{
+  background-color: #212121;
+  min-height:100px;
+  height: auto;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.footer h3{
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+}
+
+.footer font{
+  color: #2196f3;
+}
+
+
+
+.social{
+  background-color: #fff;
+  border-radius: 3em;
+  width: 4em;
+  height: 4em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+i.fa.fa-facebook::before{
+text-align: center;
+font-size: 2em;
+color: #212121;
+line-height: 2em;
+}
+
+
+.formulario{
+  padding: 0em;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.caixa{
+  height: auto;
+  background-color: #333333;
+  border-radius: 0.5em;
+  padding: 2em;
+  margin: 0 auto
+
+}
+
+.button{
+  background-color: #2196f3;
+  padding: 1em;
+  color: #fff;
+  width: 100%;
+  box-shadow: 0px 5px 2px #1565c0;
+  border: 0px solid;
+  font-weight: 900;
+  font-weight: bolder;
+  font-family: 'Roboto', sans-serif;
+  margin-top: -2%;
+}
+
+.button:hover{
+  background: #1565c0;
+}
+
+
+.formulario label{
+  color: #fff;
+   font-weight: 900;
+   font-weight: bolder;
+}
+
+.texto{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.texto font{
+  color: #2196f3;
+   font-weight: 900;
+   font-weight: bolder;
+   text-align: center;
+   margin-top: 1em;
+}
+
+.post-txt{
+  padding:1em;
+  margin: 1em 0em;
+  width: 100%;
+  height: auto;
+  border: 0px solid red;
+}
+
+.post-txt p{
+  min-height: 120px;
+  height: auto;
+}
+
+.post-img{
+  padding:1em;
+  margin: 1em 0em;
+  height: auto;
+  border: 0px solid red;
+}
+
 
 @media screen and (min-width: 300px) and (max-width: 750px) {
  .conteudo h2{
@@ -176,4 +385,15 @@ line-height: 2em;
   .caixa{
     width: 100%;
   }
+}
+
+
+#quero{
+  background-color: #262626;
+  padding: 2em;
+}
+
+
+#quero h2{
+  color: #fff;
 }
