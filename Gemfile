@@ -34,8 +34,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-
+# Ckeditor integration gem for rails http://ckeditor.com/
+gem 'ckeditor'
+# A Ruby gem for on-the-fly processing - suitable for image uploading in Rails, Sinatra and much more!
+gem 'dragonfly'
 # Minimal authorization through OO design and pure Ruby classes
 gem "pundit"
 # Flexible authentication solution for Rails with Warden.

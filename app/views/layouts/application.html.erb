@@ -6,11 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-    
+
     <% if Rails.env.production? %>
     <script type="text/javascript">
       (function (i, s, o, g, r, a, m) {
@@ -31,6 +31,79 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <section class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <a target="_blank" href="http://eunumastartup.com/"><%= image_tag("new-logo.png", style: 'margin-top: 15px;') %></a>
+          </div>
+          <div class="col-md-6">
+            <button class="button">
+              <a href="#quero">QUERO TRABALHAR EM UM STARTUP!</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="post" class="conteudo">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
+    <section id="quero" class="conteudo">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="formulario">
+              <h2>
+                <span>Transforme sua carreira</span>
+                AGORA!</span>
+            </h2>
+            <div class="caixa">
+              <%= form_with(model: Lead.new, remote: true) do |form| %>
+              <div class="form-group" id="name-group">
+                <label class='control-label' for='lead_name'>Nome completo:</label>
+                <%= form.text_field :name, id: :lead_name, placeholder: "Nome", class: "form-control" %>
+                <div class="alert alert-danger error-lead-name" role="alert" style="display:none; margin-top: 10px;">
+                  <%= fa_icon "exclamation-triangle" %>
+                  <span class="sr-only">Error:</span>
+                  Favor inserir o nome completo.
+                </div>
+              </div>
+              <div class="form-group" id='email-group'>
+                <label class="label-two control-label" for="lead_email">
+                  E-mail:</label>
+                <%= form.text_field :email, id: :lead_email, placeholder: "Email", class: "form-control" %>
+                <div class="alert alert-danger error-lead-email" role="alert" style="display:none; margin-top: 10px;">
+                  <%= fa_icon "exclamation-triangle" %>
+                  <span class="sr-only">Error:</span>
+                  Favor inserir um e-mail válido.
+                </div>
+              </div>
+            </div>
+            <%= form.submit "QUERO TRABALHAR EM UM STARTUP!", class: "button" , :onclick => "return validate();" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Compartilhe e ajude um amigo com sua
+            <font>TRANSFORMAÇÃO</font>
+          </h3>
+          <div class="social">
+            <a href="javascript:fbShare('http://eunumastartup.com/', 'Compartilhar', 'Compartilhar no Facebook', 'http://goo.gl/dS52U', 520, 350)">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
 </html>
