@@ -37,11 +37,11 @@
           <div class="col-md-6">
             <a href="/"><%= image_tag("new-logo.png", style: 'margin-top: 15px;') %></a>
           </div>
-          <div class="col-md-6">
+          <%#<div class="col-md-6">
             <button class="button">
               <a href="#quero">QUERO TRABALHAR EM UM STARTUP!</a>
             </button>
-          </div>
+          </div>%>
         </div>
       </div>
     </section>
@@ -50,6 +50,7 @@
         <%= yield %>
       </div>
     </section>
+    
     <section id="quero" class="conteudo">
       <div class="container">
         <div class="row">
@@ -60,28 +61,28 @@
                 AGORA!</span>
             </h2>
             <div class="caixa">
-              <%= form_with(model: Lead.new, remote: true) do |form| %>
-              <div class="form-group" id="name-group">
-                <label class='control-label' for='lead_name'>Nome completo:</label>
-                <%= form.text_field :name, id: :lead_name, placeholder: "Nome", class: "form-control" %>
-                <div class="alert alert-danger error-lead-name" role="alert" style="display:none; margin-top: 10px;">
+              <%= form_with(model: Lead.new, remote: true) do |form_footer| %>
+              <div class="form-group" id="name-group-footer">
+                <label class='control-label' for='lead_name_footer'>Nome completo:</label>
+                <%= form_footer.text_field :name, id: :lead_name_footer, placeholder: "Nome", class: "form-control" %>
+                <div class="alert alert-danger error-lead-name-footer" role="alert" style="display:none; margin-top: 10px;">
                   <%= fa_icon "exclamation-triangle" %>
                   <span class="sr-only">Error:</span>
                   Favor inserir o nome completo.
                 </div>
               </div>
-              <div class="form-group" id='email-group'>
-                <label class="label-two control-label" for="lead_email">
+              <div class="form-group" id='email-group-footer'>
+                <label class="label-two control-label" for="lead_email_footer">
                   E-mail:</label>
-                <%= form.text_field :email, id: :lead_email, placeholder: "Email", class: "form-control" %>
-                <div class="alert alert-danger error-lead-email" role="alert" style="display:none; margin-top: 10px;">
+                <%= form_footer.text_field :email, id: :lead_email_footer, placeholder: "Email", class: "form-control" %>
+                <div class="alert alert-danger error-lead-email-footer" role="alert" style="display:none; margin-top: 10px;">
                   <%= fa_icon "exclamation-triangle" %>
                   <span class="sr-only">Error:</span>
                   Favor inserir um e-mail válido.
                 </div>
               </div>
             </div>
-            <%= form.submit "QUERO TRABALHAR EM UMA STARTUP!", class: "button" , :onclick => "return validate();" %>
+            <%= form_footer.submit "QUERO TRABALHAR EM UMA STARTUP!", class: "button" , :onclick => "return validateFooter();" %>
             <% end %>
           </div>
         </div>

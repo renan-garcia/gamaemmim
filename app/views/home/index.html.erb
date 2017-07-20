@@ -1,23 +1,71 @@
-<% @posts.each do |post| %>
-<div class="row">
-  <div class="col-md-6">
-    <div class="post-img">
-      <a href="/posts/<%= post.id %>"><img class="img-responsive" src="<%= post.picture %>"/></a>
-    </div>
-  </div>
+<section class="conteudo">
+  <div class="container">
+    <div class="row">
 
-  <div class="col-md-6">
-    <div class="post-txt">
-      <a href="/posts/<%= post.id %>">
-        <h2><%= post.title %></h2>
-      </a>
-      <a href="/posts/<%= post.id %>">
-        <p>
-          <%= post.description %>
-        </p>
-      </a>
-      <a class="btn btn-primary" href="javascript:fbShare('http://eunumastartup.com/posts/<%= post.id %>', 'Compartilhar', 'Compartilhar no Facebook', 'http://goo.gl/dS52U', 520, 350)">Compartilhe</a>
+      <div class="col-md-6">
+        <h2>Você está feliz com seu trabalho?</h2>
+        <p class="text-one">Está desmotivado e tem dificuldades para encontrar oportunidades?</p>
+        <p class="text-two">Já pensou em como seria espetacular trabalhar em um ambiente dinâmico e empreendedor?</p><p>
+        <h3><span>Transformamos</span> e <span>conectamos</span> talentos como você às <span>melhores startups</span> do mercado!</h2>
+
+      </div>
+
+        <br>
+        <div class="col-md-5">
+          <div class="formulario">
+            <div class="caixa">
+              <%= form_with(model: Lead.new, remote: true) do |form| %>
+                <div class="form-group" id="name-group">
+                  <label class='control-label' for='lead_name'>Nome completo:</label>
+                  <%= form.text_field :name, id: :lead_name, placeholder: "Nome", class: "form-control" %>
+                  <div class="alert alert-danger error-lead-name" role="alert" style="display:none; margin-top: 10px;">
+                    <%= fa_icon "exclamation-triangle" %>
+                    <span class="sr-only">Error:</span>
+                    Favor inserir o nome completo.
+                  </div>
+                </div>
+                <div class="form-group" id='email-group'>
+                  <label class="label-two control-label" for="lead_email">
+                    E-mail:</label>
+                  <%= form.text_field :email, id: :lead_email, placeholder: "Email", class: "form-control" %>
+                  <div class="alert alert-danger error-lead-email" role="alert" style="display:none; margin-top: 10px;">
+                    <%= fa_icon "exclamation-triangle" %>
+                    <span class="sr-only">Error:</span>
+                    Favor inserir um e-mail válido.
+                  </div>
+                </div>
+            </div>
+              <%= form.submit "QUERO TRABALHAR EM UMA STARTUP!" , :onclick => "return validate();" %>
+              <% end %>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<% end %>
+</section>
+
+<section class="posts">
+  <% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="post-img">
+          <a href="/posts/<%= post.id %>"><img class="img-responsive" src="<%= post.picture %>"/></a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="post-txt">
+          <a href="/posts/<%= post.id %>">
+            <h2><%= post.title %></h2>
+          </a>
+          <a href="/posts/<%= post.id %>">
+            <p>
+              <%= post.description %>
+            </p>
+          </a>
+          <a class="btn btn-primary" href="javascript:fbShare('http://eunumastartup.com/posts/<%= post.id %>', 'Compartilhar', 'Compartilhar no Facebook', 'http://goo.gl/dS52U', 520, 350)">Compartilhe</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>
