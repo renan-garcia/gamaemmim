@@ -19,6 +19,12 @@ function validate() {
     $('#email-group').removeClass('has-error');
     $('.error-lead-email').hide();
   }
+  if(result){
+    fbq('track', 'Lead', {
+      value: 1.00,
+      currency: 'BRL'
+    });
+  }
   return result;
 }
 
