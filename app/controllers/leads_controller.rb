@@ -5,7 +5,15 @@ class LeadsController < ApplicationController
   # GET /leads
   # GET /leads.json
   def index
-    @leads = Lead.all
+    @leads = []
+    @leads_more_ip_filter = []
+    Lead.all.distinct.group_by(&:ip).each do |ip_leads|
+      if ip_leads[1].size > 2
+        @leads_more_ip_filter = @leads_more_ip_filter + ip_leads[1]
+      else
+        @leads = @leads + ip_leads[1]
+      end
+    end
   end
 
   # GET /leads/1

@@ -75,6 +75,7 @@ end
 group :development do
   gem 'mailcatcher'
   # Better error page for Rack apps
+  gem 'binding_of_caller'
   gem 'better_errors'
   # Rails >= 3 pry initializer
   gem 'pry-rails'
