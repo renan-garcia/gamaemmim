@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :posts
   devise_for :admins, skip: :registrations
+  get 'leads/csv_list'
 
   root 'home#index'
 

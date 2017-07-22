@@ -1,6 +1,6 @@
 class LeadsController < ApplicationController
   before_action :set_lead, only: %i[show edit update destroy]
-  before_action :authenticate_admin!, only: %i[index edit update destroy]
+  before_action :authenticate_admin!, only: %i[index edit update destroy csv_list]
 
   # GET /leads
   # GET /leads.json
@@ -9,10 +9,19 @@ class LeadsController < ApplicationController
     @leads_more_ip_filter = []
     Lead.all.order(:name).distinct.group_by(&:ip).each do |ip_leads|
       if ip_leads[1].size > 2
-        @leads_more_ip_filter = @leads_more_ip_filter + ip_leads[1]
+        @leads_more_ip_filter += ip_leads[1]
       else
-        @leads = @leads + ip_leads[1]
+        @leads += ip_leads[1]
       end
+    end
+  end
+
+  def csv_list
+    @options = :email, { name: { display_name: 'nome' } }, :ip, { created_at: { display_name: 'data_hora' } }
+    @database = 'email,nome,ip,data_hora'
+    Lead.all.each do |lead|
+      @database << "\n"
+      @database << "#{lead.email},#{lead.name},#{lead.ip},#{lead.created_at.strftime('%Y-%m-%d %H:%M:%S')}"
     end
   end
 
